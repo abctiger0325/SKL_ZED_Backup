@@ -1,0 +1,1616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>PL_SPI_DDS_v1_0</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>s00_axi</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm_rtl" spirit:version="1.0"/>
+      <spirit:slave>
+        <spirit:memoryMapRef spirit:memoryMapRef="s00_axi"/>
+      </spirit:slave>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awaddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_awready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WSTRB</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wstrb</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_wready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_bready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_araddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_arready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_rready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>s00_axi_aresetn</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_aresetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_ARESETN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>o_SPI_Clk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>o_SPI_Clk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>s00_axi_aclk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s00_axi_aclk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_ACLK.ASSOCIATED_BUSIF">s00_axi</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.S00_AXI_ACLK.ASSOCIATED_RESET">s00_axi_aresetn</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+    <spirit:memoryMap>
+      <spirit:name>s00_axi</spirit:name>
+      <spirit:addressBlock>
+        <spirit:name>reg0</spirit:name>
+        <spirit:baseAddress spirit:format="bitString" spirit:resolve="user" spirit:bitStringLength="32">0</spirit:baseAddress>
+        <spirit:range spirit:format="long" spirit:resolve="dependent" spirit:dependency="pow(2,(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1) + 1)" spirit:minimum="4096" spirit:rangeType="long">4096</spirit:range>
+        <spirit:width spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1) + 1">32</spirit:width>
+        <spirit:usage>register</spirit:usage>
+      </spirit:addressBlock>
+    </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:modelName>PL_SPI_DDS_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>fae82f74</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:modelName>PL_SPI_DDS_v1_0</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>fae82f74</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>dfc3df4a</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>o_SPI_Clk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>i_SPI_MISO</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>o_SPI_MOSI</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>o_SPI_CS</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>o_GPIO</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">4</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>i_Over_GPIO</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_aclk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_aresetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awaddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">4</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_awready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wstrb</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) / 8) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">1</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_wready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_bready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_araddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH&apos;)) - 1)">4</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_arready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s00_axi_rready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
+        <spirit:displayName>C S00 Axi Data Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH">32</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
+        <spirit:displayName>C S00 Axi Addr Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH">5</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/PL_SPI_9910.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/PL_SPI_DDS_v1_0_S00_AXI.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/PL_SPI_DDS_v1_0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_325ede7e</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/PL_SPI_9910.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/PL_SPI_DDS_v1_0_S00_AXI.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/PL_SPI_DDS_v1_0.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/PL_SPI_DDS_v1_0_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_dfc3df4a</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>PL_SPI_DDS_v1_0_v1_0</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_DATA_WIDTH</spirit:name>
+      <spirit:displayName>C S00 Axi Data Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_DATA_WIDTH">32</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_ADDR_WIDTH</spirit:name>
+      <spirit:displayName>C S00 Axi Addr Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_ADDR_WIDTH">5</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">PL_SPI_DDS_v1_0_v1_0</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">virtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qvirtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">versal</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qkintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qkintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">akintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">artix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">artix7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">aartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qzynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">azynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">spartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">aspartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexu</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynquplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplusHBM</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus58g</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexu</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>PL_SPI_DDS_v1_0_v1_0</xilinx:displayName>
+      <xilinx:definitionSource>package_project</xilinx:definitionSource>
+      <xilinx:coreRevision>71</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2022-01-03T10:26:12Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@401cf864_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57f34de0_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3da79743_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@47bf04ea_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@64dfb66c_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32b85f97_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@67fb0ca4_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c977e9a_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7f5e49d_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7728b22_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b06f0a3_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@15e4e06e_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66c5b125_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@61837e32_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f8b31a1_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1d381b0b_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25d75fdb_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2cbdbed5_ARCHIVE_LOCATION">c:/users/0/midget/skl/ip_repo/pl_spi_dds_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4a525fbb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@573fb016_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2c5029ac_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4db64ed3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41402748_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1a4e7f6a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5ed571ac_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@26c17d9f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4626a60f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7aca2eb2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@192f68ce_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ff4328b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@11472f58_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43044fb1_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@277269d0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b262a47_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f9a3a94_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@658bbb85_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3fd01831_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@8d49894_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@654cd6d6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c7a033c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@12c328e3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3864d37d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@145fdb6c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2be0a16b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b2dfc06_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@247b716e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@61bf40d6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2ba6dcf6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3026ef7c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@61081ebc_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1312950_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@660361c0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b33ef25_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@76e2c76_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@65bbfa8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b7d3472_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7f3f84ab_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@14d29819_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@793f63ee_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d3e23ee_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1d8c534f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3dcc5304_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@696ccfb5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2114769b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@34bccb53_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@48266735_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@47efc26c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@536405bd_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d929077_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@602c64e6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4abc1563_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@560e6f0b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6f3fdf1b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@31e96525_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58587f7f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a009aa_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25bacdbb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@52994bef_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@327dd0e4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1d0ac3ec_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@73bdf51a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f663e22_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7fb03611_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7aee265b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@302dccd6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@44c4b821_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@59a7e6ba_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e85030c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4747a3f7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@44245463_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@626bf8b7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d1059bb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6d8f89c8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2afa1cf9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@583b09dd_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e593769_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68a31dea_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@731d20a9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@20314484_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@63263d6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@19ae21c4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@aca9085_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32102c83_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@70fd2942_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1e53db30_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e2db863_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b8d33f9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5c5230a4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@61377358_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@331c9986_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@12a3cc95_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4926d566_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@798399e8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@517b0bd8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@78f2018f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@190c8eb4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37c0add_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@370d081b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@16d4a027_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1631d353_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58277111_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@625a2a2b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2c0d2cb0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e354e03_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@365aa69b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@9df09e3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@244939f2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d518de9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d96ccdb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1dbe5f1a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@45bc463e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@10db55b2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@75cd0802_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@396f37ec_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1254bc6a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@69e09a5d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6f067e81_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4508df6e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2e1c27c2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6070483_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@46ae1df4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@72ce06ae_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68043a4c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@f4965bb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3683d2b8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@28c7c749_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@16f62c15_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13fc560b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2dc546d5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a1e32eb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e4b9ece_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32b32b50_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5442b71e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@56bbd1d9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a8ad5c0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4734bbc1_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@300507c7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@54e64df3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6decfad1_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2440befa_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2556262b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32cad107_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f59c631_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21d9e529_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4abf85c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@718c338e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@381e27a1_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@23d69bd5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@18fc865_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b426640_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1433abeb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b49addf_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@346065c7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1cf959c3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1d98117_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@630b2ba4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@59063fae_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@75ef13c0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f402f45_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1a20caa9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@24d21187_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@829b76c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2c2495d3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@34d9ebb0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@342aaee_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32b69599_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f25f094_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@472db830_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@65e9055d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@53e5e6e2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3939f7bf_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d4fee5d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e0ca2cc_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@51a42db9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f212f98_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f439f95_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2da61a98_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7164dd1a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c006a9d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e0b818a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@642999b7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@361b7968_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f40f76d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@667b9f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@684023b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e2ae3b4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@227953d7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6e9aa682_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@bf8592b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b33cbc1_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5111dd9e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@313d7d9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@328be47b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3325fcdb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5b68b5aa_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e873c10_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f66eca9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@745420f3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5cd08565_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3790c3f5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@371d79cd_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2e4ed114_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5a967051_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d9304d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41948de1_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5b18b9b8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7f4e91b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6bfda4a6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4fdcaf31_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41cd94c5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@727a56e0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@560c91d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5913f41f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@14a6ace_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@eccc9e5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4761a3da_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5aff6355_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@789cd84_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@569fb352_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@318bcc75_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d5bae95_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@42c93add_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b442666_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@16f45a94_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@c9b5cee_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25549d25_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4b52dae9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@38ad6055_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@61b4c871_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@46073aa_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@17ec4834_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3ebc11a2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5b3f8c70_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@23684e1c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25712726_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@14ad2c48_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@524f876e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2755bc26_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@36b3b728_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@351229bf_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5cdc6264_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5d223ef8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@114e27fd_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5a624eb2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6da164fa_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@64e14e28_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f239f8b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@18766b6c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@31edf477_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d4d54b8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7f725789_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66e9ded1_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2ed108a7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@72ba17c8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3490ffe9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f97a0e4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@80e19e2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@750bc7d5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e821391_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c0deed8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5eb783b3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2718fa0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@47477f96_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@fe501f4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@611f0c3c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@bf37ae0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e77e32d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1d74490f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@75e1ba1e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d5d70bf_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5caed5bf_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4759561d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2643a727_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3a0fa51_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1d416704_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2eea4061_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d89f289_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4b2b4ff4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f5469de_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@22d0c733_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@317d4238_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@cf5a51_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3a46d1c0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@16a8a3ed_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6f28df17_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c4a9bfa_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@759801d0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1a58b4d1_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@14d495d8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@607862e6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3e2deea7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5d735685_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@699be267_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4707c3a4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@774693f8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4b57ed8e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1a4037ef_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@16b75f51_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7238a2c5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@9894f0b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@20a691aa_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@c101fc6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5202107f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7012d404_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@184bf231_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5370f241_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@251c4eee_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@156ef0e7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@475f8349_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7ea6dd66_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a14db86_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@51d0d795_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@708855d5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@750fb13_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1ccdc81_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@40084e8c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b4476fd_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1061a6fe_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ed19891_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35821f49_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32b4e851_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3e44b35a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7a5cda26_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1dd68380_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1cf32fdb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@59284437_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5348d4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@116ac7fe_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@614a9bbf_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57af2db6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57db77ba_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@51c4fdc6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@845d8e2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@65e70546_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4b8106de_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@356f7a7a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3e004f6c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4164e421_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2dad9288_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@31e221ad_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6999178e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@28aed151_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1548b89f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37817604_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c232853_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3a5aeee0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1a74c3af_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6d2f248d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5481a6f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@18da26a0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7ae6e97_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e320255_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@62bf2b5a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5c3d2c38_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6aa643af_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13b7091b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4a020aca_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6660e710_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@31e74e19_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c08933a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4a873f8b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@361cbe10_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b2f28e6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b69efe0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@327c9c6a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6f9f3945_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4ab3df2a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@f5c11e7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5165c0fb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@54e833a3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@27708912_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2c867c76_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e17628b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@199029a6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@134f91be_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5866a7a2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@38918e1f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6cc15b5a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4b6da53e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1677744b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b67e922_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ffc55e8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5121ba62_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b2bd34b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@74a0493b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2e3b3899_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f918f8b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e5a56be_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@93d7fe2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f312083_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2c082031_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c0bcd87_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@722d687d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d030866_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6082b85_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@77649bf1_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@45e2aa97_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13287a84_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@686f5a85_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41f415a7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57c20511_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@483c208c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a03b097_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3642b38d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d92afcf_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e136078_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5d143799_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@556f4d47_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6955b555_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@169f3430_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@26851e1a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68c7cdb2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5174f624_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1ca7c160_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a89a64b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5792a4e9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@c68e39_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@390f887f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6ed83105_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1038cc7a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4b803261_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e08444e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2adc8107_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@36cc79ff_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@29c90515_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@39704652_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13ce1f14_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@719a945c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e6c2860_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a226c3f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@61168330_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7f9cbb29_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@39f103e2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@252677be_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@152fd3ac_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d51395e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5bc73700_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21a46a86_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@595165d8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@359b76a8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@23e4171b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4b4bc313_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@511331b7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4a2e4123_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@63ed28d1_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f8a0486_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@73539d0f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@707d3d50_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b3673c5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6caf4e39_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e1b7073_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@c827de2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d6100de_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@55138d78_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@40f2243c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b8dfe26_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32449d63_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f113846_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@fb6a22f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e8f341b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4ac700e9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@284ce1e4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25e49d5b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@39adbf2a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@51257fd3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7976dc74_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@286132af_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@27eab4d4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@61766ec2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@72819175_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ed04e0f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@20aa136_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@23bcc980_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@64f4bc16_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e525ecf_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6ee0babb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@51f1de17_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58edd04d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2b21ecdf_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@10032cc4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3da6ab55_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2bb2a666_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@629ee3b4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b6611f6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d8f1e4c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2b8edcdc_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e97ddf5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@70a1fbd2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3a1f1ece_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@40d57331_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1050a2b5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@26cfd90b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@626b3497_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b238547_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4963dfd6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68a61370_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e97fb05_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6e4217b5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@49763464_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43f171a4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@16ff3e52_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e71ce4f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@56bd09f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@244e4874_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3aacac2e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@385a5111_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1248d5a3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7309f8ff_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@484fa5ac_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@370f109a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@680edbe9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f279d7e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1382d84b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6e0cc09d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@33067e7c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b474397_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@189eb542_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@36a8349_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41e10816_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@228b1d04_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e598ea2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32a12167_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@54523ad7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b048e15_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@78d20979_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@45b6f6ec_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2cebeac8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5627832a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@234c7e7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5c8e8b16_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3746ac4a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@380c8225_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7698ba42_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6c8a3ae4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a3b04e3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6724f9a3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13c856df_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@561426d2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43dfecda_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4fd67f31_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@74f7cd8b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@61c7fdd7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ab74f70_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7a6e6b48_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4996d049_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@36e6f09a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@70bcd015_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@10ddac88_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4474a767_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@48c89b69_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1df9086e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2d2f82d2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f1fedc0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c9d09d0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@34fcfd26_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@69a76550_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5a1990c9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b14dad9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4b647ca0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b634a5b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@12832b55_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7bc39c2f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d6e6f70_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57da7a57_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@104b5ac1_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6652cc90_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1ca8d071_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@24536696_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b1e3296_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@147c9ab4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5caf8513_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e1b34ff_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4c1260eb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@40363a8f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2096793f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d71c1ab_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2cd5da57_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1251e78_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@349eefca_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@39342024_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@249dd6eb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@64e570bb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f8abaa5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@63d7be69_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@11e79735_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3ea6b947_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@960d8e6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@34758b88_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@64ea1d86_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@a053a58_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6edbdbe9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58a6d02a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5dda5d1e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@260636e3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3ff9f813_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5ca2f47_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@bea4e2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f09a245_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37ecbf43_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7944e021_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13cf2ea2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6fadcc79_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@11b0c28d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68f53f8c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1ec0ff48_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@621d649e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d2c0af8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@f19c302_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2dc73155_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@523861ae_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@530ddea8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@f7ce85_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7043340b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7b5252e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a362eb5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4a022d75_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c0fcac7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41c14b8d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1537ffb1_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1be1431_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2af7862b_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@30002966_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f2d2ff4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ee85987_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1ba73e0c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32a46510_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41dfb54d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@74b1d806_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@12d0d3e4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@62b55020_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@732b4fa4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@47ee7c04_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@67e4ce8c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b991862_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37969544_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c651ee8_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@64df06a3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@500fb0a3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b958ea3_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21afb6ad_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1781c84e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@fb4ba79_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f458841_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@67e80600_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@38a4e9f0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@9e395aa_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@30454829_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b6a1e51_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@67ff35be_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1d3d945f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@368b4f5e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@47665a95_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3edd043_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@fb168fd_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5b8dac67_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68760920_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@50cb7a86_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@401e4e18_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7db12728_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f9936d6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2b5f597_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3cf55555_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43be6f90_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6da78531_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@478ca4af_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d5ca130_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e027e6d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6767a5f9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@27ae6648_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5270531e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3ea55599_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1e9456c9_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4555fc1d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4ebb2159_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@52b5fe22_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e9aba52_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@586af22f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@725bd75_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a86eb_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e03022_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6ad7d6a5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@12448204_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@42139cd2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@70327253_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2319a0d4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1dc00b89_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@428cdb9e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@54baef30_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5421ff28_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4340602_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@398609fd_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@407baa42_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@658427be_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2174b06d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6d5114f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3635e44d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5a40e2e6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4213f2d6_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@33065a87_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7ab6072e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@50e25b5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@417d0600_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@f37afb4_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1565cc0e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e614b1f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7639db79_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@29c1c763_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4642f235_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@72c80d39_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d938807_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1eff76f7_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d07e849_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4acc1c2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@17205fbe_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2524c1ef_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@23e0d7d5_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5d0f2697_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6dd59039_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3af9cf75_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@200608f2_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@79646eda_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5b2672ff_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@371a98e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f5b198d_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@c78558_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a444f16_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@28847912_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3c265d08_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@194427b1_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5699fe1e_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5cf2a672_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@26d64528_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@b5bf68c_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@328c5bdd_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7713580f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7b0c9678_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@19fd6b0a_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5c782823_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f971d0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@70cf8e5f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@26435c66_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7832f5fc_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@56307b13_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@52127ffe_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@544b91a0_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@201c7f8f_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@e659491_ARCHIVE_LOCATION">c:/Users/0/Midget/SKL/ip_repo/PL_SPI_DDS_1.0</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2021.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="c1c9180c"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="871c369d"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="16e5e5c9"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="f8ed7bd8"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="20f50d64"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="7689e7ef"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

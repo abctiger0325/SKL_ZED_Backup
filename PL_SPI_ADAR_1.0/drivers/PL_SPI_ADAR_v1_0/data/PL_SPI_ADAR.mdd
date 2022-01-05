@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER PL_SPI_ADAR
+	OPTION supported_peripherals = (PL_SPI_ADAR);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = PL_SPI_ADAR;
+END DRIVER
