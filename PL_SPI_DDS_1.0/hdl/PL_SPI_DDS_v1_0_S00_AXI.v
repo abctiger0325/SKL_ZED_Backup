@@ -22,7 +22,7 @@
         output wire [7:0] o_GPIO,
         output wire [7:0] o_LED,
         input wire   i_Over_GPIO,
-
+        output wire  o_ADC_Trigger,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -316,6 +316,7 @@
 	           if (slv_reg0[7:0] != w_StatusReg)
 	               slv_reg0[7:0] <= w_StatusReg;
 	           slv_reg2 <= w_RxBuffer;
+	           slv_reg6 <= w_ADC;
 	      end
 
 	  end
@@ -457,7 +458,7 @@
 	// Add user logic here
 	wire [7:0] w_RxBuffer;
 	wire [7:0] w_StatusReg;
-	
+	wire w_ADC;
 	
     PL_SPI_9910 SPI(
         .i_Clk(S_AXI_ACLK),
@@ -477,7 +478,8 @@
         .o_StatusRW(),
         .o_LED_Temp(o_LED),
         .o_Tx_Cnt(),
-        .i_Cnt_Phrase(slv_reg5[11:0])
+        .i_Cnt_Phrase(slv_reg5[11:0]),
+        .o_ADC_Trigger(w_ADC)
     );
 
 	// User logic ends

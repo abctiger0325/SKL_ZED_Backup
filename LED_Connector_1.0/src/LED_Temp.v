@@ -38,6 +38,10 @@ module LED_Temp(
     always @(posedge i_clk)
     begin
         r_LED = i_PS_LED;
+        if (r_LED == 'h00)
+        begin
+            r_LED = 'h87;
+        end
     end
     
     always @(*)

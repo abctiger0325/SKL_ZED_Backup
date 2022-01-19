@@ -22,7 +22,7 @@
         
         input wire i_CMOS_Clk,
         input wire [13:0] i_CMOS_Data,
-        output wire [7:0] o_LED,
+//        output wire [7:0] o_LED,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -61,7 +61,7 @@
 	    .o_SPI_CS(o_SPI_CS),
 	    .i_CMOS_Clk(i_CMOS_Clk),
 	    .i_CMOS_Data(i_CMOS_Data),
-	    .o_LED (o_LED),
+//	    .o_LED (o_LED),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),

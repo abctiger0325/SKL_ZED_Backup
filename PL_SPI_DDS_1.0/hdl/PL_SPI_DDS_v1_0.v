@@ -22,6 +22,7 @@
         output wire [4:0] o_GPIO,
 //        output wire [7:0] o_LED,
         input wire   i_Over_GPIO,
+        output wire  o_ADC_Trigger,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -61,6 +62,7 @@
 	    .o_SPI_CS(o_SPI_CS),
         .o_GPIO(o_GPIO),
         .o_LED(),
+        .o_ADC_Trigger(o_ADC_Trigger),
         .i_Over_GPIO(i_Over_GPIO),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),

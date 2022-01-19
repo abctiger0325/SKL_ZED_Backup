@@ -53,7 +53,8 @@ module PL_SPI_9910
    output reg   [7:0] o_Tx_Cnt,
    output reg   [4:0] o_GPIO,
    input        i_Over_GPIO,
-   input        [11:0]i_Cnt_Phrase
+   input        [11:0]i_Cnt_Phrase,
+   output reg   o_ADC_Trigger
 
    );
 
@@ -109,6 +110,7 @@ module PL_SPI_9910
   reg r_DDS_en = 0;
   reg r_Over_Lock = 0;
   reg [11:0] r_Over_Cnt = 'h000;
+  reg r_Rest = 0;
       
   assign w_CPOL  = 0;
   assign w_CPHA  = 0;
@@ -356,7 +358,15 @@ module PL_SPI_9910
   always @(posedge i_Clk)
   begin
     r_GPIO = (i_GPIO & 'hF0) | (r_GPIO & 'h0F);
-    if (r_DDS_en) r_GPIO[1]= !i_Over_GPIO;
+    if (r_DDS_en) 
+    begin
+        if ((r_GPIO[1] != i_Over_GPIO) && (i_Over_GPIO)) 
+        begin
+            r_Rest <= 1;
+            r_Over_Cnt = 'h000;
+        end
+        r_GPIO[1]= !i_Over_GPIO;
+    end
     if (!r_Over_Lock) r_GPIO[3] = i_GPIO[3];
     if ((i_GPIO & 'h10) && (i_Cnt_Phrase != 'h0))
     begin
@@ -364,20 +374,29 @@ module PL_SPI_9910
         r_DDS_en = 1;
         r_Over_Cnt = 'h000;
     end  
-    else if (r_Over_Lock)
+    if (r_Rest)
     begin
-        if ((r_Over_Cnt >= i_Cnt_Phrase) && !r_GPIO[3])
-        begin
-            r_GPIO[3] = 1;
-        end
-        else if ((r_Over_Cnt >= i_Cnt_Phrase+20) && r_GPIO[3])
-        begin
-            r_GPIO[3] = 0;
-//            r_DDS_en = 0;
-            r_Over_Lock = 0;
-        end
         r_Over_Cnt = r_Over_Cnt +1;    
+        if (r_Over_Cnt >= i_Cnt_Phrase)
+        begin
+            r_GPIO[1] <= 1;
+            r_Rest <= 0;
+        end
     end
+//    else if (r_Over_Lock)
+//    begin
+//        if ((r_Over_Cnt >= i_Cnt_Phrase) && !r_GPIO[3])
+//        begin
+//            r_GPIO[3] = 1;
+//        end
+//        else if ((r_Over_Cnt >= i_Cnt_Phrase+20) && r_GPIO[3])
+//        begin
+//            r_GPIO[3] = 0;
+////            r_DDS_en = 0;
+//            r_Over_Lock = 0;
+//        end
+//        r_Over_Cnt = r_Over_Cnt +1;    
+//    end
 //  if (r_OverLock)
 //  begin
 //        r_Over_Cnt = r_Over_Cnt + 1;
@@ -425,11 +444,12 @@ module PL_SPI_9910
      o_GPIO = r_GPIO;
 //     o_GPIO[0] = i_Clk;
 //    o_LED_Temp = r_Cmd_Lim;
-    o_LED_Temp[2] = 1;
+    o_LED_Temp[2] = r_Rest;
     o_LED_Temp[0] = (i_Cnt_Phrase == 0);
     o_LED_Temp[1] = r_Over_Lock;
     o_LED_Temp[4] = (i_Cnt_Phrase == 1000);
     o_LED_Temp[5] = (i_GPIO & 'h10) >> 4;
+    o_ADC_Trigger = r_Rest;
   end
 
 
