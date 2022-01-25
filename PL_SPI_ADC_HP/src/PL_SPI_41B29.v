@@ -46,9 +46,13 @@ module PL_SPI
    output reg   o_SPI_MOSI,
    output reg   o_SPI_CS,
    
-   input        i_CMOS_Clk,
-   input        [13:0] i_CMOS_Data,
-   output reg   [13:0] o_CMOS_Data,
+//   input        i_CMOS_Clk,
+//   input        [13:0] i_CMOS_Data,
+//   output reg   [13:0] o_CMOS_Data,
+   input        i_ADC_Done,
+   output reg   o_AXI_Init,
+   output reg   [7:0] o_ADC_State,
+   input        i_ADC_Trigger,
     
    output reg   o_StatusRW = 0,
    output reg   [7:0] o_LED_Temp,
@@ -101,6 +105,8 @@ module PL_SPI
   reg r_Lock = 0;
   
   reg [13:0] r_CMOS_value;
+  
+  reg r_RdyStart = 0;
       
   assign w_CPOL  = 0;
   assign w_CPHA  = 0;
@@ -336,18 +342,37 @@ module PL_SPI
         r_Halfbit_Cnt <= r_Halfbit_Cnt + 1;
     end
   end
-
-  always @(posedge i_CMOS_Clk)
+  
+  always @(posedge i_Clk)
   begin
-//    r_CMOS_value <= i_CMOS_Data;
-    if (r_CMOS_value >= 10000)
-        r_CMOS_value = 0;
-    else
-        r_CMOS_value <= r_CMOS_value + 1;
-   
-    o_LED_Temp <= i_CMOS_Data & 'hFF;
-    
+    if (i_ADC_Trigger)
+    begin
+        r_RdyStart = 1;
+        o_AXI_Init = 1;
+    end
+    else if (r_RdyStart)
+    begin
+        r_RdyStart = 0;
+        o_AXI_Init = 0;
+    end
   end
+  
+  always @(posedge i_ADC_Done)
+  begin
+    o_ADC_State = 'h01;
+  end
+
+//  always @(posedge i_CMOS_Clk)
+//  begin
+////    r_CMOS_value <= i_CMOS_Data;
+//    if (r_CMOS_value >= 10000)
+//        r_CMOS_value = 0;
+//    else
+//        r_CMOS_value <= r_CMOS_value + 1;
+   
+//    o_LED_Temp <= i_CMOS_Data & 'hFF;
+    
+//  end
   
 // End of Constructing Aera
               
@@ -360,7 +385,7 @@ module PL_SPI
      o_StatusRW = r_StatusRw;
      o_StatusReg = r_StatusReg;
      o_Tx_Cnt = r_TX_Byte_Cnt;
-     o_CMOS_Data = r_CMOS_value;
+//     o_CMOS_Data = r_CMOS_value;
   end
 
 
@@ -398,7 +423,7 @@ module PL_SPI
        o_StatusRW = r_StatusRw;
        r_Lock = 0;
        r_CMOS_value = 0;
-       
+       r_RdyStart = 0;
        for (i = 0;i< 41;i=i+1)
         i_TX_Byte[i] = 0;    
   end
