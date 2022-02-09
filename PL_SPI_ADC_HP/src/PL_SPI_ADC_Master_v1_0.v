@@ -33,8 +33,9 @@
         output wire  o_SPI_CS,
         
         input wire i_CMOS_Clk,
-        input wire [13:0] i_CMOS_Data,
+        input wire [11:0] i_CMOS_Data,
         input wire i_ADC_Work,
+        output wire o_SYNC_Clk,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -173,6 +174,7 @@
 //	    .i_ADC_Work(i_ADC_Work),
         .i_ADC_Work(w_ADC_Work),
 	    .o_ADC_Done(w_ADC_Done),
+	    .o_SYNC_Clk(o_SYNC_Clk),
 	    
 		.INIT_AXI_TXN(m00_axi_init_axi_txn),
 		.TXN_DONE(m00_axi_txn_done),

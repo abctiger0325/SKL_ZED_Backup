@@ -22,32 +22,43 @@
 
 module PL_ADC(
         input wire i_CMOS_Clk,
-        input wire [13:0] i_CMOS_Data,
-        output reg [13:0] o_CMOS_Data,
+        input wire [11:0] i_CMOS_Data,
+        output reg [11:0] o_CMOS_Data,
         input wire i_ADC_Work,
         output reg o_ADC_Done
     );
     
     reg r_Work = 0;
     reg [19:0] r_Count = 0;
+    reg r_Done = 0;
+    reg [11:0] r_output = 0;
+    reg reset = 0;
     
 always @(posedge i_CMOS_Clk)
 begin
-    if (i_ADC_Work)
+    if (!i_ADC_Work & r_Done)
     begin
-        o_ADC_Done = 0;
+        r_Done = 0;
+    end
+    if (i_ADC_Work & !r_Done)
+    begin
+        r_Done = 0;
         r_Work = 1;
 //        o_CMOS_Data = i_CMOS_Data;
     end
     
+    
     if (r_Work)
     begin
-        o_CMOS_Data = r_Count;
+        r_output = i_CMOS_Data;
+//        r_output = r_Count;
+//        if (r_Count >= 4096) r_output = r_output >> 12;
         r_Count = r_Count + 1;
-        if (r_Count >= 200000)
+        if (r_Count >= 100000)
         begin
-            o_ADC_Done = 1;
+            r_Done = 1;
             r_Work = 0;
+            r_Count = 0;
         end
     end
 //    else if (r_Work)
@@ -58,9 +69,17 @@ begin
     
 end
 
+always @(*) 
+begin
+    o_ADC_Done = r_Done;
+    o_CMOS_Data = r_output;
+end
+
 initial
 begin
     r_Work = 0;
+    r_Count = 0;
+    r_output = 'h0;
 end
 
 endmodule

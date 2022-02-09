@@ -357,9 +357,9 @@ module PL_SPI
     end
   end
   
-  always @(posedge i_ADC_Done)
+  always @(*)
   begin
-    o_ADC_State = 'h01;
+    o_ADC_State = i_ADC_Done;
   end
 
 //  always @(posedge i_CMOS_Clk)

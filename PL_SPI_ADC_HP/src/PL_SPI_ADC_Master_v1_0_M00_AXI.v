@@ -9,7 +9,7 @@
 		// Do not modify the parameters beyond this line
 
 		// Base address of targeted slave
-		parameter  C_M_TARGET_SLAVE_BASE_ADDR	= 32'h40000000,
+		parameter  C_M_TARGET_SLAVE_BASE_ADDR	= 32'h10000000,
 		// Burst Length. Supports 1, 2, 4, 8, 16, 32, 64, 128, 256 burst lengths
 		parameter integer C_M_AXI_BURST_LEN	= 16,
 		// Thread ID Width
@@ -17,7 +17,7 @@
 		// Width of Address Bus
 		parameter integer C_M_AXI_ADDR_WIDTH	= 32,
 		// Width of Data Bus
-		parameter integer C_M_AXI_DATA_WIDTH	= 32,
+		parameter integer C_M_AXI_DATA_WIDTH	= 16,
 		// Width of User Write Address Bus
 		parameter integer C_M_AXI_AWUSER_WIDTH	= 0,
 		// Width of User Read Address Bus
@@ -27,15 +27,18 @@
 		// Width of User Read Data Bus
 		parameter integer C_M_AXI_RUSER_WIDTH	= 0,
 		// Width of User Response Bus
-		parameter integer C_M_AXI_BUSER_WIDTH	= 0
+		parameter integer C_M_AXI_BUSER_WIDTH	= 0,
+		
+		parameter integer Divider_Count = 9
 	)
 	(
 		// Users to add ports here
         input wire i_CMOS_Clk,
-        input wire [13:0] i_CMOS_Data,
+        input wire [11:0] i_CMOS_Data,
 //        output wire [13:0] o_CMOS_Data,
         input wire i_ADC_Work,
         output wire o_ADC_Done,
+        output wire o_SYNC_Clk,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -178,7 +181,7 @@
 
 	// Burst length for transactions, in C_M_AXI_DATA_WIDTHs.
 	// Non-2^n lengths will eventually cause bursts across 4K address boundaries.
-	 localparam integer C_MASTER_LENGTH	= 12;
+	 localparam integer C_MASTER_LENGTH	= 16;          //burst data quat
 	// total number of burst transfers is master length divided by burst length and burst size
 	 localparam integer C_NO_BURSTS_REQ = C_MASTER_LENGTH-clogb2((C_M_AXI_BURST_LEN*C_M_AXI_DATA_WIDTH/8)-1);
 	// Example State machine to initialize counter, initialize write transactions, 
@@ -259,7 +262,9 @@
 	assign M_AXI_AWUSER	= 'b1;
 	assign M_AXI_AWVALID	= axi_awvalid;
 	//Write Data(W)
-	assign M_AXI_WDATA	= w_CMOS_Data;
+	assign M_AXI_WDATA	= axi_wdata;
+//	assign M_AXI_WDATA	= w_CMOS_Data;
+
 	//All bursts are complete and aligned in this example
 	assign M_AXI_WSTRB	= {(C_M_AXI_DATA_WIDTH/8){1'b1}};
 	assign M_AXI_WLAST	= axi_wlast;
@@ -462,7 +467,7 @@
 	    //else if (wnext && axi_wlast)                                                  
 	    //  axi_wdata <= 'b0;                                                           
 	    else if (wnext)                                                                 
-	      axi_wdata <= axi_wdata + 1;                                                   
+	      axi_wdata <= w_CMOS_Data;                                                   
 	    else                                                                            
 	      axi_wdata <= axi_wdata;                                                       
 	    end                                                                             
@@ -623,7 +628,7 @@
 	    //Only check data when RVALID is active                             
 	    else if (rnext && (M_AXI_RDATA != expected_rdata))                  
 	      begin                                                             
-	        read_mismatch <= 1'b1;                                          
+	        read_mismatch <= 1'b0;  //ignore error                                          
 	      end                                                               
 	    else                                                                
 	      read_mismatch <= 1'b0;                                            
@@ -889,7 +894,20 @@
 	                                                                                                            
 	 // This logic is to qualify the last read count with the final read                                        
 	 // response. This demonstrates how to confirm that a read has been                                         
-	 // committed.                                                                                              
+	 // committed. 
+	 reg [7:0] clk_cnt = 0;         
+	 reg r_sync = 0;                 
+	 assign o_SYNC_Clk = r_sync;                                                                   
+	  always @(posedge i_CMOS_Clk)
+	  begin
+	       clk_cnt = clk_cnt+1;
+	       if (clk_cnt > Divider_Count)
+	       begin
+	           clk_cnt <= 0;
+	           r_sync = r_sync ^ 1;
+	       end
+	  end
+	          
 	                                                                                                            
 	  always @(posedge M_AXI_ACLK)                                                                              
 	  begin                                                                                                     
@@ -904,13 +922,13 @@
 	      reads_done <= reads_done;                                                                             
 	    end                                                                                                     
 
-    wire [13:0] w_CMOS_Data;
+    wire [11:0] w_CMOS_Data;
 	// Add user logic here
     PL_ADC ADC (
         .i_CMOS_Clk(i_CMOS_Clk),
         .i_CMOS_Data(i_CMOS_Data),
         .o_CMOS_Data(w_CMOS_Data),
-        .i_ADC_Work(i_ADC_Work),
+        .i_ADC_Work(INIT_AXI_TXN),
         .o_ADC_Done(o_ADC_Done)
         
     );
