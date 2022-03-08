@@ -28,6 +28,7 @@
         input wire [11:0] i_CMOS_Data,
         input wire i_ADC_Work,
         output wire [7:0] o_LED,
+        output wire o_DMA_Reset,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -81,7 +82,7 @@
 	    .o_AXI_Init(m00_axi_init_axi_txn),
         .i_ADC_Done(w_ADC_Done),
         .o_ADC_Work(w_ADC_Work),
-
+        .o_DMA_Reset(o_DMA_Reset),
 	
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),

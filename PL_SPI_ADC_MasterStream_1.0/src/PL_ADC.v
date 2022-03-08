@@ -51,8 +51,8 @@ begin
     
     if (r_Work)
     begin
-//        r_output = i_CMOS_Data;
-        r_output = 'h929;
+        r_output = i_CMOS_Data;
+//        r_output = 'h929;
 //        r_output <= r_Count;
 //        if (r_Count >= 4096) r_output = r_output >> 12;
         r_Count = r_Count + 1;

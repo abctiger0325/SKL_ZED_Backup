@@ -9,7 +9,7 @@
 		// Do not modify the parameters beyond this line
 
 		// Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
-		parameter integer C_M_AXIS_TDATA_WIDTH	= 32,
+		parameter integer C_M_AXIS_TDATA_WIDTH	= 16,
 		// Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.
 		parameter integer C_M_START_COUNT	= 32
 	)
@@ -41,7 +41,7 @@
 		input wire  M_AXIS_TREADY
 	);
 	// Total number of output data                                                 
-	localparam NUMBER_OF_OUTPUT_WORDS = 49152;                                               
+	localparam NUMBER_OF_OUTPUT_WORDS = 65536;                                               
 //	localparam NUMBER_OF_OUTPUT_WORDS = 256;                                                                            
 	// function called clogb2 that returns an integer which has the                      
 	// value of the ceiling of the log base 2.                                           
@@ -70,28 +70,29 @@
 	                SEND_STREAM   = 2'b10; // In this state the                          
 	                                     // stream data is output through M_AXIS_TDATA   
 	// State variable                                                                    
-	reg [1:0] mst_exec_state;                                                            
+	reg [1:0] mst_exec_state = 0;                                                            
 	// Example design FIFO read pointer                                                  
-	reg [bit_num-1:0] read_pointer;                                                      
+	reg [bit_num-1:0] read_pointer = 0;                                                      
 
 	// AXI Stream internal signals
 	//wait counter. The master waits for the user defined number of clock cycles before initiating a transfer.
-	reg [WAIT_COUNT_BITS-1 : 0] 	count;
+	reg [WAIT_COUNT_BITS-1 : 0] 	count = 0;
 	//streaming data valid
 	wire  	axis_tvalid;
 	//streaming data valid delayed by one clock cycle
-	reg  	axis_tvalid_delay;
+	reg  	axis_tvalid_delay = 0;
 	//Last of the streaming data 
 	wire  	axis_tlast;
 	//Last of the streaming data delayed by one clock cycle
-	reg  	axis_tlast_delay;
+	reg  	axis_tlast_delay = 0;
 	//FIFO implementation signals
-	reg [C_M_AXIS_TDATA_WIDTH-1 : 0] 	stream_data_out;
+	reg [C_M_AXIS_TDATA_WIDTH-1 : 0] 	stream_data_out = 0;
 	wire  	tx_en;
 	//The master has issued all the streaming data stored in FIFO
 	reg  	tx_done;
 
-    reg [7:0] r_LED;
+    reg [7:0] r_LED = 0;
+    reg [3:0] r_addon = 0;
 	// I/O Connections assignments
 
 	assign M_AXIS_TVALID	= axis_tvalid_delay;
@@ -249,26 +250,28 @@
 	        end                                          
 	      else if (tx_en)// && M_AXIS_TSTRB[byte_index]  
 	        begin                                        
-	          stream_data_out <= read_pointer + 32'b1;   
+//	          stream_data_out <= read_pointer + 16'b1 + r_addon;   
+                stream_data_out <= w_CMOS_Data;
 	        end                                          
 	    end                                              
     wire r_last;
     wire [11:0] w_CMOS_Data;
     wire w_ADC_Work;
     assign w_ADC_Work = INIT_AXI_TXN & ( count == C_M_START_COUNT - 1 );
+    always @(posedge INIT_AXI_TXN)
+        r_addon = r_addon + 1;
+    
 //    assign o_ADC_Done = 1;
 	// Add user logic here
 	always @(*)
 	begin
 	   r_LED[0] = o_ADC_Done;
 	   r_LED[1] = axis_tvalid;
-	   r_LED[2] = r_last;
+	   r_LED[2] = axis_tlast;
 	   r_LED[3] = tx_done;
-	   r_LED[4] = M_AXIS_TREADY;
-	   r_LED[7:6] = mst_exec_state;
-       r_LED[5] = read_pointer <= NUMBER_OF_OUTPUT_WORDS-1;
-
-
+//	   r_LED[4] = M_AXIS_TREADY;
+	   r_LED[7-:4] = r_addon;
+//       r_LED[5] = read_pointer <= NUMBER_OF_OUTPUT_WORDS-1;
 	end
 	
     PL_ADC ADC (

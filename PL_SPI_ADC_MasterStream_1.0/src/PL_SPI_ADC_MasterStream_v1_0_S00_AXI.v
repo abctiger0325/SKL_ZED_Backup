@@ -23,6 +23,7 @@
 	    output wire  o_AXI_Init,
         input wire   i_ADC_Done,
         output wire  o_ADC_Work,
+        output wire o_DMA_Reset,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -456,6 +457,31 @@
 	        end   
 	    end
 	end    
+    
+//    reg [3:0] r_Reset_Cnt = 0;
+//    reg r_Reset = 0;
+//    wire r_CombinedStart;
+    
+//    assign r_CombinedStart = slv_reg5[0] && (!r_Reset);
+//    assign o_DMA_Reset = !r_Reset;
+    
+//    always @(posedge S_AXI_ACLK)
+//    begin
+//        if (!slv_reg5[0])
+//        begin
+//            r_Reset_Cnt = 0;
+//            r_Reset = 0;
+//        end
+//        if (slv_reg5[0] && r_Reset_Cnt < 10)
+//        begin
+//            r_Reset = 1;
+//            r_Reset_Cnt = r_Reset_Cnt + 1; 
+//        end
+//        else
+//        begin
+//            r_Reset = 0;
+//        end
+//    end
 
 	// Add user logic here
 	wire [7:0]w_RxBuffer;
@@ -481,7 +507,7 @@
         .i_ADC_Done(i_ADC_Done),
         .o_ADC_State(w_ADC_State),
         .i_ADC_Trigger(slv_reg5[0]),
-        
+//         .i_ADC_Trigger(r_CombinedStart),
 //        .i_CMOS_Clk(i_CMOS_Clk),
 //        .i_CMOS_Data(i_CMOS_Data),
 //        .o_CMOS_Data(w_CMOS_Data),
