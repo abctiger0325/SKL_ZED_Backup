@@ -1,3 +1,5 @@
+`define FIFO_Size 50000
+`define Data_Size 250000
 
 `timescale 1 ns / 1 ps
 
@@ -11,12 +13,12 @@
 		// Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
 		parameter integer C_M_AXIS_TDATA_WIDTH	= 16,
 		// Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.
-		parameter integer C_M_START_COUNT	= 32
+		parameter integer C_M_START_COUNT	= 2
 	)
 	(
 		// Users to add ports here
         input wire i_CMOS_Clk,
-        input wire [11:0] i_CMOS_Data,
+        input wire [15:0] i_CMOS_Data,
 //        output wire [13:0] o_CMOS_Data,
         input wire i_ADC_Work,
         output wire o_ADC_Done,
@@ -41,8 +43,7 @@
 		input wire  M_AXIS_TREADY
 	);
 	// Total number of output data                                                 
-	localparam NUMBER_OF_OUTPUT_WORDS = 65536;                                               
-//	localparam NUMBER_OF_OUTPUT_WORDS = 256;                                                                            
+	localparam NUMBER_OF_OUTPUT_WORDS = `Data_Size;                                                                                           
 	// function called clogb2 that returns an integer which has the                      
 	// value of the ceiling of the log base 2.                                           
 	function integer clogb2 (input integer bit_depth);                                   
@@ -53,12 +54,11 @@
 	endfunction                                                                          
 	                                                                                     
 	// WAIT_COUNT_BITS is the width of the wait counter.                                 
-	localparam integer WAIT_COUNT_BITS = clogb2(C_M_START_COUNT-1);                      
-//	localparam integer WAIT_COUNT_BITS = 1;                      
+	localparam integer WAIT_COUNT_BITS = clogb2(C_M_START_COUNT-1);                              
 	// bit_num gives the minimum number of bits needed to address 'depth' size of FIFO.  
-	localparam bit_num  = clogb2(NUMBER_OF_OUTPUT_WORDS);                                
-//	localparam bit_num  = 32;                                
-	                                                                                     
+	localparam bit_num  = clogb2(NUMBER_OF_OUTPUT_WORDS);  
+	localparam bit_FIFO = clogb2(`FIFO_Size);               
+	                                                                                       
 	// Define the states of state machine                                                
 	// The control state machine oversees the writing of input streaming data to the FIFO,
 	// and outputs the streaming data from the FIFO                                      
@@ -72,9 +72,14 @@
 	// State variable                                                                    
 	reg [1:0] mst_exec_state = 0;                                                            
 	// Example design FIFO read pointer                                                  
-	reg [bit_num-1:0] read_pointer = 0;                                                      
-
-	// AXI Stream internal signals
+	reg [bit_FIFO-1:0] read_pointer = 0; 
+	reg [bit_num-1:0] count_pointer = 0;  
+	reg [bit_FIFO-1:0] write_pointer = 0;   
+	                              
+    reg r_delta_check = 0;
+                                  
+    reg [7:0] r_Receive [1:0][0:`FIFO_Size - 1] ;
+    // AXI Stream internal signals
 	//wait counter. The master waits for the user defined number of clock cycles before initiating a transfer.
 	reg [WAIT_COUNT_BITS-1 : 0] 	count = 0;
 	//streaming data valid
@@ -165,18 +170,9 @@
 	end                                                                       
 
     
-	//tvalid generation
-	//axis_tvalid is asserted when the control state machine's state is SEND_STREAM and
-	//number of output streaming data is less than the NUMBER_OF_OUTPUT_WORDS.
-//	assign axis_tvalid = ((mst_exec_state == SEND_STREAM) && (INIT_AXI_TXN) && !o_ADC_Done);
-	assign axis_tvalid = ((mst_exec_state == SEND_STREAM) && (read_pointer < NUMBER_OF_OUTPUT_WORDS) && INIT_AXI_TXN);
-	// AXI tlast generation                                                                        
-	// axis_tlast is asserted number of output streaming data is NUMBER_OF_OUTPUT_WORDS-1          
-	// (0 to NUMBER_OF_OUTPUT_WORDS-1)                                                             
+	assign axis_tvalid = ((mst_exec_state == SEND_STREAM) && (count_pointer < NUMBER_OF_OUTPUT_WORDS) && INIT_AXI_TXN);
 	assign axis_tlast = (read_pointer == NUMBER_OF_OUTPUT_WORDS-1);                                
-//	assign axis_tlast = r_last;                                
-	                                                                                               
-	                                                                                               
+                                                                                              	                                                                                               
 	// Delay the axis_tvalid and axis_tlast signal by one clock cycle                              
 	// to match the latency of M_AXIS_TDATA                                                        
 	always @(posedge M_AXIS_ACLK)                                                                  
@@ -194,30 +190,34 @@
 	end                                                                                            
 
 	//read_pointer pointer
+    genvar byte_index;
+    generate 
+	  for(byte_index=0; byte_index<= 1; byte_index=byte_index+1)
+	  begin:FIFO_GEN
+
+	    always @( posedge M_AXIS_ACLK )
+	    begin
+	      if (INIT_AXI_TXN)// && S_AXIS_TSTRB[byte_index])
+	        begin
+	          r_Receive[byte_index][write_pointer] = i_CMOS_Data[(byte_index*8+7) -: 8];
+	        end  
+	    end  
+	  end		
+	endgenerate
+
 
 	always@(posedge M_AXIS_ACLK)                                               
 	begin                                                                            
 	  if(!M_AXIS_ARESETN)                                                            
-	    begin                                                                        
+	    begin   
+	      count_pointer <= 0;                                                                     
 	      read_pointer <= 0;                                                         
 	      tx_done <= 1'b0;                                                           
 	    end                                                                          
 	  else if (INIT_AXI_TXN)  
 	  begin
-//	    if (!o_ADC_Done)
-//	       begin
-//	        if (!tx_en)
-//	           begin
-//	               tx_done <= 1'b0;
-//	           end                 
-//	        end
-//	    else
-//	       begin
-//	           tx_done <= 1'b1;
-//	       end
-	                                                          
-	    if (read_pointer <= NUMBER_OF_OUTPUT_WORDS-1)                                
-	      begin                                                                      
+	      if (count_pointer <= NUMBER_OF_OUTPUT_WORDS-1)                                
+	      begin   
 	        if (tx_en)                                                               
 	          // read pointer is incremented after every read from the FIFO          
 	          // when FIFO read signal is enabled.                                   
@@ -231,59 +231,48 @@
 	        // tx_done is asserted when NUMBER_OF_OUTPUT_WORDS numbers of streaming data
 	        // has been out.                                                         
 	        tx_done <= 1'b1; 
-	        read_pointer <= 0;                                                        
+	        read_pointer <= 0;  
+	        write_pointer <= 0;                                                      
 	      end    
 	  end                                                                    
 	end                                                                              
 
-
 	//FIFO read enable generation 
 
 	assign tx_en = M_AXIS_TREADY && axis_tvalid;   
-	                                                     
+	                                     
 	    // Streaming output data is read from FIFO       
-	    always @( posedge M_AXIS_ACLK )                  
-	    begin                                            
-	      if(!M_AXIS_ARESETN)                            
-	        begin                                        
-	          stream_data_out <= 1;                      
-	        end                                          
-	      else if (tx_en)// && M_AXIS_TSTRB[byte_index]  
-	        begin                                        
+    always @( posedge M_AXIS_ACLK )                  
+    begin                                            
+      if(!M_AXIS_ARESETN)                            
+        begin                                        
+          stream_data_out <= 1;                      
+        end                                          
+      else if (tx_en)// && M_AXIS_TSTRB[byte_index]  
+        begin                                        
 //	          stream_data_out <= read_pointer + 16'b1 + r_addon;   
-                stream_data_out <= w_CMOS_Data;
-	        end                                          
-	    end                                              
+            stream_data_out <= r_Receive[1][read_pointer] << 8 | r_Receive[0][read_pointer];
+//              stream_data_out <= i_CMOS_Data; 
+        end                                          
+    end     
+                                             
     wire r_last;
     wire [11:0] w_CMOS_Data;
     wire w_ADC_Work;
     assign w_ADC_Work = INIT_AXI_TXN & ( count == C_M_START_COUNT - 1 );
-    always @(posedge INIT_AXI_TXN)
-        r_addon = r_addon + 1;
     
-//    assign o_ADC_Done = 1;
 	// Add user logic here
-	always @(*)
-	begin
-	   r_LED[0] = o_ADC_Done;
-	   r_LED[1] = axis_tvalid;
-	   r_LED[2] = axis_tlast;
-	   r_LED[3] = tx_done;
-//	   r_LED[4] = M_AXIS_TREADY;
-	   r_LED[7-:4] = r_addon;
-//       r_LED[5] = read_pointer <= NUMBER_OF_OUTPUT_WORDS-1;
-	end
 	
-    PL_ADC ADC (
-        .i_CMOS_Clk(i_CMOS_Clk),
-        .i_CMOS_Data(i_CMOS_Data),
-        .o_CMOS_Data(w_CMOS_Data),
-        .i_ADC_Work(w_ADC_Work),
-        .o_ADC_Done(o_ADC_Done),
-//        .o_ADC_Done()
-        .o_ADC_Last(r_last)
+//    PL_ADC ADC (
+//        .i_CMOS_Clk(i_CMOS_Clk),
+//        .i_CMOS_Data(i_CMOS_Data),
+//        .o_CMOS_Data(w_CMOS_Data),
+//        .i_ADC_Work(w_ADC_Work),
+//        .o_ADC_Done(o_ADC_Done),
+////        .o_ADC_Done()
+//        .o_ADC_Last(r_last)
         
-    );
+//    );
 
 	// User logic ends
 
