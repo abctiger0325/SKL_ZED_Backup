@@ -98,6 +98,8 @@
 
     reg [7:0] r_LED = 0;
     reg [3:0] r_addon = 0;
+    wire r_FIFOFull;
+    reg r_FIFOCycle = 0;
 	// I/O Connections assignments
 
 	assign M_AXIS_TVALID	= axis_tvalid_delay;
@@ -106,7 +108,7 @@
 	assign M_AXIS_TLAST	= axis_tlast_delay;
 	assign M_AXIS_TSTRB	= {(C_M_AXIS_TDATA_WIDTH/8){1'b1}};
     assign o_LED = r_LED;
-
+    assign r_FIFOFull = (r_FIFOCycle && (read_pointer == write_pointer));
 	// Control state machine implementation                             
 	always @(posedge M_AXIS_ACLK)                                             
 	begin                                                                     
@@ -197,9 +199,10 @@
 
 	    always @( posedge M_AXIS_ACLK )
 	    begin
-	      if (INIT_AXI_TXN)// && S_AXIS_TSTRB[byte_index])
+	      if (INIT_AXI_TXN && !r_FIFOFull)// && S_AXIS_TSTRB[byte_index])
 	        begin
-	          r_Receive[byte_index][write_pointer] = i_CMOS_Data[(byte_index*8+7) -: 8];
+//	          r_Receive[byte_index][write_pointer] = i_CMOS_Data[(byte_index*8+7) -: 8];
+                r_Receive[byte_index][write_pointer] = count_pointer[(byte_index*8+7) -: 8];
 	        end  
 	    end  
 	  end		
@@ -217,13 +220,28 @@
 	  else if (INIT_AXI_TXN)  
 	  begin
 	      if (count_pointer <= NUMBER_OF_OUTPUT_WORDS-1)                                
-	      begin   
+	      begin
+	        if (!r_FIFOFull)
+	        begin
+                write_pointer <= write_pointer +1;
+                if (write_pointer >= `FIFO_Size)
+                begin
+                   write_pointer <= 0;
+                   r_FIFOCycle = 1;
+                end
+            end   
 	        if (tx_en)                                                               
 	          // read pointer is incremented after every read from the FIFO          
 	          // when FIFO read signal is enabled.                                   
 	          begin                                                                  
-	            read_pointer <= read_pointer + 1;                                    
-	            tx_done <= 1'b0;                                                     
+	            read_pointer <= read_pointer + 1;   
+	            count_pointer <= count_pointer + 1;                                 
+	            tx_done <= 1'b0;
+	            if (read_pointer  >= `FIFO_Size)
+	            begin
+	               read_pointer <= 0;
+	               r_FIFOCycle <= 0;
+	            end                                                     
 	          end                                                                    
 	      end                                                                        
 	    else if (read_pointer == NUMBER_OF_OUTPUT_WORDS)                             
@@ -232,7 +250,8 @@
 	        // has been out.                                                         
 	        tx_done <= 1'b1; 
 	        read_pointer <= 0;  
-	        write_pointer <= 0;                                                      
+	        write_pointer <= 0; 
+	        count_pointer <= count_pointer + 1;                                                      
 	      end    
 	  end                                                                    
 	end                                                                              
