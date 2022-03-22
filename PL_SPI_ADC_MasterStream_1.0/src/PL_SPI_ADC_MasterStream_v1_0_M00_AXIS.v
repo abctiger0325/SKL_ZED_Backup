@@ -269,8 +269,8 @@
 	// Add user logic here
 	always @(*)
 	begin
-	   r_LED[0] = o_ADC_Done;
-	   r_LED[1] = INIT_AXI_TXN;
+	   r_LED[0] = M_AXIS_TREADY;
+	   r_LED[1] = axis_tvalid;
 	   r_LED[2] = (read_pointer < NUMBER_OF_OUTPUT_WORDS);
 	   r_LED[3] = tx_done;
 //	   r_LED[4] = M_AXIS_TREADY;
