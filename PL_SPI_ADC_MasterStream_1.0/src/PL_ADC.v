@@ -26,7 +26,8 @@ module PL_ADC(
         output reg [11:0] o_CMOS_Data,
         input wire i_ADC_Work,
         output reg o_ADC_Done,
-        output reg o_ADC_Last
+        output reg o_ADC_Last,
+        input wire [31:0] i_Count
     );
     
     reg r_Work = 0;
@@ -56,11 +57,11 @@ begin
         r_output <= r_Count;
 //        if (r_Count >= 4096) r_output = r_output >> 12;
         r_Count = r_Count + 1;
-        if (r_Count == 99999)
+        if (r_Count == i_Count - 1)
             o_ADC_Last <= 1;
         else
             o_ADC_Last <= 0;
-        if (r_Count >= 100000)
+        if (r_Count >= i_Count)
         begin
             r_Done = 1;
             r_Work = 0;
