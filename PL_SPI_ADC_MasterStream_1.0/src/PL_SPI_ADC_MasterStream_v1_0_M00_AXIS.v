@@ -201,6 +201,7 @@
     begin
         if (!tx_done && write_pointer <= NUMBER_OF_OUTPUT_WORDS - 1)
         begin
+	        r_count <= r_count + 1;
 //            r_Receive[write_pointer] <= i_CMOS_Data;
             r_Receive[write_pointer] = r_count;
         end
@@ -216,7 +217,6 @@
 	    end                                                                          
 	  else if (INIT_AXI_TXN)  
 	  begin
-	    r_count <= r_count + 1;
 	    if (read_pointer <= NUMBER_OF_OUTPUT_WORDS-1)                                
 	      begin
 	        write_pointer <= write_pointer + 1;                                                                      
@@ -273,8 +273,8 @@
 	   r_LED[1] = axis_tvalid;
 	   r_LED[2] = (read_pointer < NUMBER_OF_OUTPUT_WORDS);
 	   r_LED[3] = tx_done;
-//	   r_LED[4] = M_AXIS_TREADY;
-	   r_LED[5-:2] = r_addon;
+	   r_LED[4] = read_pointer == NUMBER_OF_OUTPUT_WORDS;
+//	   r_LED[5-:2] = r_addon;
 	   r_LED[7-:2] = mst_exec_state;
 //       r_LED[5] = read_pointer <= NUMBER_OF_OUTPUT_WORDS-1;
 	end

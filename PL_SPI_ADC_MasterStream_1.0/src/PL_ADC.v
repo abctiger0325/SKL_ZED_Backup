@@ -78,8 +78,8 @@ end
 
 always @(*) 
 begin
-    o_ADC_Done = r_Done;
-    o_CMOS_Data = r_output;
+    o_ADC_Done <= r_Done;
+    o_CMOS_Data <= r_output;
 end
 
 initial
