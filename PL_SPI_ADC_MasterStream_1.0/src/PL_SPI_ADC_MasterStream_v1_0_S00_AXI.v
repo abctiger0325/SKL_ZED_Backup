@@ -535,7 +535,7 @@
 //        .o_CMOS_Data(w_CMOS_Data),
         
         .o_StatusRW(),
-        .o_LED_Temp(o_LED),
+//        .o_LED_Temp(o_LED),
         .o_Tx_Cnt()
     );
 	// User logic ends
