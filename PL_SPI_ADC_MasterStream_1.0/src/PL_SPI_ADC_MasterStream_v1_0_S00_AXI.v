@@ -508,6 +508,7 @@
 //	   r_LED[5-:2] = r_addon;
 //	   r_LED[7-:2] = mst_exec_state;
 //       r_LED[5] = read_pointer <= NUMBER_OF_OUTPUT_WORDS-1;
+//    r_LED = 'h87;
 	end
 
     PL_SPI SPI(
