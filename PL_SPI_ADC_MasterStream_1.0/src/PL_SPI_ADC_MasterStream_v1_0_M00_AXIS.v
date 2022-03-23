@@ -22,6 +22,7 @@
         output wire o_ADC_Done,
         input wire  INIT_AXI_TXN,
         output wire [7:0] o_LED,
+        input wire i_Trigger,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -273,7 +274,8 @@
 	   r_LED[1] = axis_tvalid;
 	   r_LED[2] = (read_pointer < NUMBER_OF_OUTPUT_WORDS);
 	   r_LED[3] = tx_done;
-	   r_LED[4] = read_pointer == NUMBER_OF_OUTPUT_WORDS;
+	   r_LED[4] = INIT_AXI_TXN;
+	   r_LED[5] = i_Trigger;
 //	   r_LED[5-:2] = r_addon;
 	   r_LED[7-:2] = mst_exec_state;
 //       r_LED[5] = read_pointer <= NUMBER_OF_OUTPUT_WORDS-1;

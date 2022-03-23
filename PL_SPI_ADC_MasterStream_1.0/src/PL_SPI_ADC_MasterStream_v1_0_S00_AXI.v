@@ -24,6 +24,8 @@
         input wire   i_ADC_Done,
         output wire  o_ADC_Work,
         output wire o_DMA_Reset,
+        input wire   i_Trigger,
+        output wire [7:0] o_LED,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -126,6 +128,9 @@
 	integer	 byte_index;
 	reg	 aw_en;
 
+    reg [7:0] r_LED = 0;
+    
+    assign o_LED = r_LED;
 	// I/O Connections assignments
 
 	assign S_AXI_AWREADY	= axi_awready;
@@ -488,7 +493,23 @@
 	wire [7:0]w_StatusReg;
 	wire [13:0]w_CMOS_Data;
 	wire [7:0]w_ADC_State;
+	wire i_ADC_Trigger;
 	
+	assign i_ADC_Trigger = !i_Trigger;
+    always @(posedge S_AXI_ACLK )
+	begin
+	   r_LED[0] = i_Trigger == 1;
+	   r_LED[1] = i_Trigger == 0;
+	   r_LED[2] = i_Trigger == 1'bX;
+	   r_LED[3] = i_ADC_Trigger;
+	   r_LED[4] = o_AXI_Init;
+	   r_LED[5] = i_Trigger;
+	   r_LED[6] = 1;
+//	   r_LED[5-:2] = r_addon;
+//	   r_LED[7-:2] = mst_exec_state;
+//       r_LED[5] = read_pointer <= NUMBER_OF_OUTPUT_WORDS-1;
+	end
+
     PL_SPI SPI(
         .i_Clk(S_AXI_ACLK),
         .i_Cmd_Lim(slv_reg3[7:0]),
@@ -506,8 +527,9 @@
         .o_AXI_Init(o_AXI_Init),
         .i_ADC_Done(i_ADC_Done),
         .o_ADC_State(w_ADC_State),
-        .i_ADC_Trigger(slv_reg5[0]),
-//         .i_ADC_Trigger(r_CombinedStart),
+//        .i_ADC_Trigger(slv_reg5[0]),
+        .i_ADC_Trigger(i_ADC_Trigger),
+//         .i_ADC_Trigger(1),
 //        .i_CMOS_Clk(i_CMOS_Clk),
 //        .i_CMOS_Data(i_CMOS_Data),
 //        .o_CMOS_Data(w_CMOS_Data),

@@ -28,7 +28,8 @@
         input wire [11:0] i_CMOS_Data,
         input wire i_ADC_Work,
         output wire [7:0] o_LED,
-        output wire o_DMA_Reset,
+//        output wire o_DMA_Reset,
+        input wire i_Trigger,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -82,7 +83,9 @@
 	    .o_AXI_Init(m00_axi_init_axi_txn),
         .i_ADC_Done(w_ADC_Done),
         .o_ADC_Work(w_ADC_Work),
-        .o_DMA_Reset(o_DMA_Reset),
+//        .o_DMA_Reset(),
+        .i_Trigger(i_Trigger),
+        .o_LED(o_LED),
 	
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
@@ -118,7 +121,8 @@
         .i_ADC_Work(w_ADC_Work),
 	    .o_ADC_Done(w_ADC_Done),
         .INIT_AXI_TXN(m00_axi_init_axi_txn),
-        .o_LED(o_LED),
+//        .o_LED(o_LED),
+//        .i_Trigger(i_Trigger),
         
 		.M_AXIS_ACLK(m00_axis_aclk),
 		.M_AXIS_ARESETN(s00_axi_aresetn),
