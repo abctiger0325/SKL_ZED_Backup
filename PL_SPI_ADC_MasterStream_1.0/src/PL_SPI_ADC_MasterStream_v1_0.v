@@ -85,7 +85,7 @@
         .o_ADC_Work(w_ADC_Work),
 //        .o_DMA_Reset(),
         .i_Trigger(i_Trigger),
-        .o_LED(o_LED),
+//        .o_LED(o_LED),
 	
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
@@ -121,7 +121,7 @@
         .i_ADC_Work(w_ADC_Work),
 	    .o_ADC_Done(w_ADC_Done),
         .INIT_AXI_TXN(m00_axi_init_axi_txn),
-//        .o_LED(o_LED),
+        .o_LED(o_LED),
 //        .i_Trigger(i_Trigger),
         
 		.M_AXIS_ACLK(m00_axis_aclk),
