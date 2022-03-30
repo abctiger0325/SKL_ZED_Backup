@@ -30,6 +30,7 @@
         output wire [7:0] o_LED,
 //        output wire o_DMA_Reset,
         input wire i_Trigger,
+        input wire i_Mode,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -122,6 +123,7 @@
 	    .o_ADC_Done(w_ADC_Done),
         .INIT_AXI_TXN(m00_axi_init_axi_txn),
         .o_LED(o_LED),
+        .i_Mode(i_Mode),
 //        .i_Trigger(i_Trigger),
         
 		.M_AXIS_ACLK(m00_axis_aclk),

@@ -23,6 +23,7 @@
         input wire  INIT_AXI_TXN,
         output wire [7:0] o_LED,
         input wire i_Trigger,
+        input wire i_Mode,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -200,11 +201,13 @@
 
     always @ (posedge M_AXIS_ACLK)
     begin
-        if (!tx_done && write_pointer <= NUMBER_OF_OUTPUT_WORDS - 1)
+        if (!tx_done && write_pointer <= NUMBER_OF_OUTPUT_WORDS - 1 && read_pointer < write_pointer)
         begin
-	        r_count <= r_count + 1;
-//            r_Receive[write_pointer] <= i_CMOS_Data;
-            r_Receive[write_pointer] = r_count;
+	       
+	        if (i_Mode)
+                r_Receive[write_pointer] <= i_CMOS_Data;
+            else        
+                r_Receive[write_pointer] <= r_count;
         end
     end
 
@@ -218,6 +221,7 @@
 	    end                                                                          
 	  else if (INIT_AXI_TXN)  
 	  begin
+	    r_count <= r_count + 1;
 	    if (read_pointer <= NUMBER_OF_OUTPUT_WORDS-1)                                
 	      begin
 	        write_pointer <= write_pointer + 1;                                                                      
@@ -235,7 +239,8 @@
 	        // has been out.                                                         
 	        tx_done <= 1'b1; 
 	        read_pointer <= 0;
-	        write_pointer <= 0;                                                        
+	        write_pointer <= 0;      
+	        r_count <= 0;                                                  
 	      end    
 	  end                                                                    
 	end                                                                              

@@ -370,7 +370,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>6df6b286</spirit:value>
+            <spirit:value>1001769d</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -386,7 +386,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>6df6b286</spirit:value>
+            <spirit:value>1001769d</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -520,6 +520,19 @@
       </spirit:port>
       <spirit:port>
         <spirit:name>i_Trigger</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>i_Mode</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>
@@ -1032,7 +1045,7 @@
       <spirit:file>
         <spirit:name>src/PL_SPI_ADC_MasterStream_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_bde8c849</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_441de211</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1135,11 +1148,11 @@
       </xilinx:taxonomies>
       <xilinx:displayName>PL_SPI_ADC_MasterStream_v1_0_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>34</xilinx:coreRevision>
+      <xilinx:coreRevision>42</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>user.org:user:PL_SPI_ADC_MasterStream_v1_0:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2022-03-24T03:06:57Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2022-03-30T00:08:55Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.df@12ea4d66_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@48b5361e_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
@@ -2701,14 +2714,101 @@
         <xilinx:tag xilinx:name="ui.data.coregen.df@132d1879_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@2c3c1009_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.df@42b545a5_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@26acb0c0_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@74f36cf1_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3026d33_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@574153fb_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@54e0dd30_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5ff28d70_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4a22f8ea_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7ca49d66_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37e064b4_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@47993010_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b0b8647_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@492b4259_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@140b7fd_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5615dbd_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@19c84c2f_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4b65a5ba_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@10a73963_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7f8e0557_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@675268f8_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@24ed8c8f_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35d1416f_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@322848df_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1bbf7a7c_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3ada8518_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@dd2e5c2_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@467475c3_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3ea18965_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@368870fc_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a7da6a9_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@44100212_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@36de30f8_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@561b9a4e_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b3be37_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2829adf1_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3fd36b0b_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@cc0bbb0_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7015abde_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@76f8ef94_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f457f71_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@54d52f10_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7fd5b714_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f20fa92_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7723dfdf_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1624face_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@632f4813_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@18dc7a9d_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@44f23500_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@15065c48_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6715a6b3_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@15a7d2d0_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1101186b_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f3a444c_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@271c7e23_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@76b33870_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@329088c0_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@90dc46f_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5eba381_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@881b60e_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@118dec18_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f05ec36_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7b3b7538_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b198c17_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d03c46f_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@50aa83e8_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1906280f_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5caf8c28_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7cc41b95_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@187c6292_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b7a3ede_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@8ca1784_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6f358cc4_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66644147_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ac29a6b_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32f8120e_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@475a804a_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58794a10_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@26d4d813_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@75555179_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@192c969f_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c2b4185_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@11ee6050_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1403fb27_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3eebc9a5_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4de9774_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@324e91b0_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@f2dbd0c_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7ecc7136_ARCHIVE_LOCATION">/home/labish/Midget/SKL/SKL_ZED_Backup/PL_SPI_ADC_MasterStream_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2021.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="fc1e7df3"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="871c369d"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="e035d524"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="90ad46f0"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a88d709b"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="56834691"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="c115a869"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="95c7e2e4"/>
     </xilinx:packagingInfo>

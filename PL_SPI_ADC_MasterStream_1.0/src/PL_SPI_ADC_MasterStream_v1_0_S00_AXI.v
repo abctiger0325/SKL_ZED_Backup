@@ -323,6 +323,12 @@
 	               slv_reg0[7:0] <= w_StatusReg;
 	           slv_reg2 <= w_RxBuffer;
 	           slv_reg4 <= w_ADC_State;
+	           slv_reg5 <= slv_reg5 | r_ADCLock << 1; 
+	           if (r_ADCUnlock)
+	           begin
+	               slv_reg5[1] <= 0;
+	               slv_reg5[2] <= 0;
+	           end
 //	           o_ADC_Work <= slv_reg5[1];
 	      end
 
@@ -330,6 +336,7 @@
 	end    
 
     assign o_ADC_Work = slv_reg5[1];
+    assign o_ADC_Work = 0;
 	// Implement write response logic generation
 	// The write response and response valid signals are asserted by the slave 
 	// when axi_wready, S_AXI_WVALID, axi_wready and S_AXI_WVALID are asserted.  
@@ -495,7 +502,28 @@
 	wire [7:0]w_ADC_State;
 	wire i_ADC_Trigger;
 	
-	assign i_ADC_Trigger = !i_Trigger;
+	reg r_ADCLock = 0;
+	reg r_ADCUnlock = 1;
+	reg [C_S_AXI_DATA_WIDTH-1:0]	ex_slv_reg5;
+	
+	always @(posedge S_AXI_ACLK)
+	begin
+	//??
+	   if (w_ADC_State[0] && !slv_reg5[2])
+	       r_ADCLock <= 1;
+	   else if (slv_reg5[2])
+	       r_ADCLock <= 0;      
+	end
+	
+	assign i_ADC_Trigger = !i_Trigger && !slv_reg5[1];
+	always @(negedge i_Trigger)
+	begin 
+	   if (slv_reg5[2])
+	       r_ADCUnlock <= 1;
+	   else if (r_ADCLock)
+	       r_ADCUnlock <= 0;
+	end
+	   
     always @(posedge S_AXI_ACLK )
 	begin
 	   r_LED[0] = i_Trigger == 1;
