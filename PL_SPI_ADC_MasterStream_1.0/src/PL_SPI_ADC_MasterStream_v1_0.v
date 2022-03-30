@@ -70,7 +70,7 @@
     wire  m00_axi_init_axi_txn;
     wire  w_ADC_Done;
     wire  w_ADC_Work;
-
+    wire  w_Done_Clean;
 // Instantiation of Axi Bus Interface S00_AXI
 	PL_SPI_ADC_MasterStream_v1_0_S00_AXI # ( 
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
@@ -87,6 +87,7 @@
 //        .o_DMA_Reset(),
         .i_Trigger(i_Trigger),
 //        .o_LED(o_LED),
+        .o_Done_Clean(w_Done_Clean),
 	
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
@@ -125,7 +126,7 @@
         .o_LED(o_LED),
         .i_Mode(i_Mode),
 //        .i_Trigger(i_Trigger),
-        
+        .i_Done_Clean(w_Done_Clean),
 		.M_AXIS_ACLK(m00_axis_aclk),
 		.M_AXIS_ARESETN(s00_axi_aresetn),
 		.M_AXIS_TVALID(m00_axis_tvalid),

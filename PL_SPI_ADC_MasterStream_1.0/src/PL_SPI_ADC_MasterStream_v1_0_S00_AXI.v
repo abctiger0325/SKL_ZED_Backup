@@ -26,6 +26,7 @@
         output wire o_DMA_Reset,
         input wire   i_Trigger,
         output wire [7:0] o_LED,
+        output wire o_Done_Clean,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -323,7 +324,8 @@
 	               slv_reg0[7:0] <= w_StatusReg;
 	           slv_reg2 <= w_RxBuffer;
 	           slv_reg4 <= w_ADC_State;
-	           slv_reg5 <= slv_reg5 | r_ADCLock << 1; 
+	           if (r_ADCLock)
+	               slv_reg5[1] <= r_ADCLock;
 	           if (r_ADCUnlock)
 	           begin
 	               slv_reg5[1] <= 0;
@@ -335,8 +337,8 @@
 	  end
 	end    
 
-    assign o_ADC_Work = slv_reg5[1];
-    assign o_ADC_Work = 0;
+//    assign o_ADC_Work = slv_reg5[1];
+//    assign o_ADC_Work = 0;
 	// Implement write response logic generation
 	// The write response and response valid signals are asserted by the slave 
 	// when axi_wready, S_AXI_WVALID, axi_wready and S_AXI_WVALID are asserted.  
@@ -505,23 +507,24 @@
 	reg r_ADCLock = 0;
 	reg r_ADCUnlock = 1;
 	reg [C_S_AXI_DATA_WIDTH-1:0]	ex_slv_reg5;
+	reg r_Done_Clean = 0;
 	
 	always @(posedge S_AXI_ACLK)
 	begin
 	//??
-	   if (w_ADC_State[0] && !slv_reg5[2])
-	       r_ADCLock <= 1;
-	   else if (slv_reg5[2])
-	       r_ADCLock <= 0;      
+	   if (w_ADC_State[0])
+	       r_ADCLock <= !slv_reg5[2];    
+	   if (slv_reg5[2])
+	       r_Done_Clean <= 1;
+	   else
+	       r_Done_Clean <= 0; 
 	end
+	assign o_Done_Clean = r_Done_Clean;
 	
 	assign i_ADC_Trigger = !i_Trigger && !slv_reg5[1];
 	always @(negedge i_Trigger)
 	begin 
-	   if (slv_reg5[2])
-	       r_ADCUnlock <= 1;
-	   else if (r_ADCLock)
-	       r_ADCUnlock <= 0;
+	   r_ADCUnlock <= !r_ADCLock;
 	end
 	   
     always @(posedge S_AXI_ACLK )

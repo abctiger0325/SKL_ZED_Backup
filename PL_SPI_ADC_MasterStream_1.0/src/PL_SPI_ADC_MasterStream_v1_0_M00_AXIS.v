@@ -24,6 +24,7 @@
         output wire [7:0] o_LED,
         input wire i_Trigger,
         input wire i_Mode,
+        input wire i_Done_Clean,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -201,7 +202,7 @@
 
     always @ (posedge M_AXIS_ACLK)
     begin
-        if (!tx_done && write_pointer <= NUMBER_OF_OUTPUT_WORDS - 1 && read_pointer < write_pointer)
+        if ((mst_exec_state == SEND_STREAM) && !tx_done && write_pointer <= NUMBER_OF_OUTPUT_WORDS - 1 && read_pointer < write_pointer)
         begin
 	       
 	        if (i_Mode)
@@ -271,7 +272,7 @@
     always @(posedge INIT_AXI_TXN)
         r_addon = r_addon + 1;
     
-//    assign o_ADC_Done = 1;
+//    assign o_ADC_Done = tx_done;
 	// Add user logic here
 	always @(*)
 	begin
@@ -292,7 +293,8 @@
         .o_CMOS_Data(w_CMOS_Data),
         .i_ADC_Work(w_ADC_Work),
         .o_ADC_Done(o_ADC_Done),
-//        .o_ADC_Done()
+        .i_Done_Clean(i_Done_Clean),
+//        .o_ADC_Done(),
         .o_ADC_Last(r_last),
         .i_Count(`Data_Size)
         
