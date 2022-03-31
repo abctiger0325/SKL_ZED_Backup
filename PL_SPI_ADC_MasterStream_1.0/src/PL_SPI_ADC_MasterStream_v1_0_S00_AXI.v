@@ -26,7 +26,6 @@
         output wire o_DMA_Reset,
         input wire   i_Trigger,
         output wire [7:0] o_LED,
-        output wire o_Done_Clean,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -324,21 +323,15 @@
 	               slv_reg0[7:0] <= w_StatusReg;
 	           slv_reg2 <= w_RxBuffer;
 	           slv_reg4 <= w_ADC_State;
-	           if (r_ADCLock)
-	               slv_reg5[1] <= r_ADCLock;
-	           if (r_ADCUnlock)
-	           begin
-	               slv_reg5[1] <= 0;
-	               slv_reg5[2] <= 0;
-	           end
+	           r_ETHSent <= slv_reg5[1];
+	           slv_reg5[0] <= r_Fall;
 //	           o_ADC_Work <= slv_reg5[1];
 	      end
 
 	  end
 	end    
-
-//    assign o_ADC_Work = slv_reg5[1];
-//    assign o_ADC_Work = 0;
+    reg r_ETHSent = 0;
+    assign o_ADC_Work = slv_reg5[1];
 	// Implement write response logic generation
 	// The write response and response valid signals are asserted by the slave 
 	// when axi_wready, S_AXI_WVALID, axi_wready and S_AXI_WVALID are asserted.  
@@ -503,30 +496,30 @@
 	wire [13:0]w_CMOS_Data;
 	wire [7:0]w_ADC_State;
 	wire i_ADC_Trigger;
+	reg r_Fall = 0;
+	reg r_First = 0;
 	
-	reg r_ADCLock = 0;
-	reg r_ADCUnlock = 1;
-	reg [C_S_AXI_DATA_WIDTH-1:0]	ex_slv_reg5;
-	reg r_Done_Clean = 0;
-	
-	always @(posedge S_AXI_ACLK)
-	begin
-	//??
-	   if (w_ADC_State[0])
-	       r_ADCLock <= !slv_reg5[2];    
-	   if (slv_reg5[2])
-	       r_Done_Clean <= 1;
-	   else
-	       r_Done_Clean <= 0; 
-	end
-	assign o_Done_Clean = r_Done_Clean;
-	
-	assign i_ADC_Trigger = !i_Trigger && !slv_reg5[1];
-	always @(negedge i_Trigger)
-	begin 
-	   r_ADCUnlock <= !r_ADCLock;
-	end
-	   
+//	assign i_ADC_Trigger = !i_Trigger && !slv_reg5[0];
+//    assign i_ADC_Trigger = !i_Trigger && !r_First;
+assign i_ADC_Trigger = !i_Trigger;
+    
+    always @(posedge i_Trigger)
+    begin
+        if (r_Fall)
+            r_First <= 1;
+        else 
+            r_First <= 0;
+    end 
+    
+    always @(posedge S_AXI_ACLK )
+    begin
+        if (i_ADC_Trigger)
+            r_Fall <= 1;
+        else if (r_ETHSent)
+            r_Fall <= 0;
+            //reset
+    end
+    
     always @(posedge S_AXI_ACLK )
 	begin
 	   r_LED[0] = i_Trigger == 1;

@@ -27,8 +27,7 @@ module PL_ADC(
         input wire i_ADC_Work,
         output reg o_ADC_Done,
         output reg o_ADC_Last,
-        input wire [31:0] i_Count,
-        input wire i_Done_Clean
+        input wire [31:0] i_Count
     );
     
     reg r_Work = 0;
@@ -39,7 +38,7 @@ module PL_ADC(
     
 always @(posedge i_CMOS_Clk)
 begin
-    if (i_Done_Clean & r_Done)
+    if (!i_ADC_Work & r_Done)
     begin
         r_Done = 0;
     end

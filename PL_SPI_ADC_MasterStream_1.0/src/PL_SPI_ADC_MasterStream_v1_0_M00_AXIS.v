@@ -24,7 +24,6 @@
         output wire [7:0] o_LED,
         input wire i_Trigger,
         input wire i_Mode,
-        input wire i_Done_Clean,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -202,13 +201,12 @@
 
     always @ (posedge M_AXIS_ACLK)
     begin
-        if ((mst_exec_state == SEND_STREAM) && !tx_done && write_pointer <= NUMBER_OF_OUTPUT_WORDS - 1 && read_pointer < write_pointer)
+        if (!tx_done && write_pointer <= NUMBER_OF_OUTPUT_WORDS - 1)
         begin
-	       
 	        if (i_Mode)
                 r_Receive[write_pointer] <= i_CMOS_Data;
-            else        
-                r_Receive[write_pointer] <= r_count;
+            else
+                r_Receive[write_pointer] = r_count;
         end
     end
 
@@ -222,7 +220,7 @@
 	    end                                                                          
 	  else if (INIT_AXI_TXN)  
 	  begin
-	    r_count <= r_count + 1;
+	   r_count <= r_count + 1;
 	    if (read_pointer <= NUMBER_OF_OUTPUT_WORDS-1)                                
 	      begin
 	        write_pointer <= write_pointer + 1;                                                                      
@@ -240,8 +238,8 @@
 	        // has been out.                                                         
 	        tx_done <= 1'b1; 
 	        read_pointer <= 0;
-	        write_pointer <= 0;      
-	        r_count <= 0;                                                  
+	        write_pointer <= 0;     
+	        r_count <= 0;                                                   
 	      end    
 	  end                                                                    
 	end                                                                              
@@ -272,7 +270,7 @@
     always @(posedge INIT_AXI_TXN)
         r_addon = r_addon + 1;
     
-//    assign o_ADC_Done = tx_done;
+//    assign o_ADC_Done = 1;
 	// Add user logic here
 	always @(*)
 	begin
@@ -293,8 +291,7 @@
         .o_CMOS_Data(w_CMOS_Data),
         .i_ADC_Work(w_ADC_Work),
         .o_ADC_Done(o_ADC_Done),
-        .i_Done_Clean(i_Done_Clean),
-//        .o_ADC_Done(),
+//        .o_ADC_Done()
         .o_ADC_Last(r_last),
         .i_Count(`Data_Size)
         
