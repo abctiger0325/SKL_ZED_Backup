@@ -323,8 +323,7 @@
 	               slv_reg0[7:0] <= w_StatusReg;
 	           slv_reg2 <= w_RxBuffer;
 	           slv_reg4 <= w_ADC_State;
-	           r_ETHSent <= slv_reg5[1];
-	           slv_reg5[0] <= r_Fall;
+
 //	           o_ADC_Work <= slv_reg5[1];
 	      end
 
@@ -499,9 +498,9 @@
 	reg r_Fall = 0;
 	reg r_First = 0;
 	
-//	assign i_ADC_Trigger = !i_Trigger && !slv_reg5[0];
+	assign i_ADC_Trigger = !i_Trigger && slv_reg5[0];
 //    assign i_ADC_Trigger = !i_Trigger && !r_First;
-assign i_ADC_Trigger = !i_Trigger;
+//assign i_ADC_Trigger = !i_Trigger;
     
     always @(posedge i_Trigger)
     begin
