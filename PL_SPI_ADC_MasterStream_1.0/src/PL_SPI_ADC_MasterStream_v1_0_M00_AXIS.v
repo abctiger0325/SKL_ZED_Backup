@@ -1,4 +1,5 @@
-`define Data_Size 250000
+`define Data_Size 4800
+//`define Data_Size 250000
 `timescale 1 ns / 1 ps
 
 	module PL_SPI_ADC_MasterStream_v1_0_M00_AXIS #
@@ -11,7 +12,7 @@
 		// Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
 		parameter integer C_M_AXIS_TDATA_WIDTH	= 16,
 		// Start count is the number of clock cycles the master will wait before initiating/issuing any transaction.
-		parameter integer C_M_START_COUNT	= 2
+		parameter integer C_M_START_COUNT	= 4
 	)
 	(
 		// Users to add ports here
